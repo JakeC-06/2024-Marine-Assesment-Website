@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+        }
+        
+        p {
+            text-align: center;
+            margin-bottom: 32px;
+            color: #f0f0f0;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #f0f0f0;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #ff6666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Photo Gallery</h1>
+    <p>Please note these are in no particular order.</p>
+    <p></p>
+
+
+    <div class="gallery">
+        <img src="img/0.jpg" alt="Image 0" onclick="openModal(this)">
+        <img src="img/1.jpg" alt="Image 1" onclick="openModal(this)">
+        <img src="img/2.jpg" alt="Image 2" onclick="openModal(this)">
+        <img src="img/3.jpg" alt="Image 3" onclick="openModal(this)">
+        <img src="img/4.jpg" alt="Image 4" onclick="openModal(this)">
+        <img src="img/5.jpg" alt="Image 5" onclick="openModal(this)">
+        <img src="img/6.jpg" alt="Image 6" onclick="openModal(this)">
+        <img src="img/7.jpg" alt="Image 7" onclick="openModal(this)">
+        <img src="img/8.jpg" alt="Image 8" onclick="openModal(this)">
+        <img src="img/9.jpg" alt="Image 9" onclick="openModal(this)">
+        <img src="img/10.jpg" alt="Image 10" onclick="openModal(this)">
+        <img src="img/11.jpg" alt="Image 11" onclick="openModal(this)">
+        <img src="img/12.jpg" alt="Image 12" onclick="openModal(this)">
+        <img src="img/13.jpg" alt="Image 13" onclick="openModal(this)">
+        <img src="img/14.jpg" alt="Image 14" onclick="openModal(this)">
+        <img src="img/15.jpg" alt="Image 15" onclick="openModal(this)">
+        <img src="img/16.jpg" alt="Image 16" onclick="openModal(this)">
+        <img src="img/17.jpg" alt="Image 17" onclick="openModal(this)">
+        <img src="img/18.jpg" alt="Image 18" onclick="openModal(this)">
+        <img src="img/19.jpg" alt="Image 19" onclick="openModal(this)">
+        <img src="img/20.jpg" alt="Image 20" onclick="openModal(this)">
+        <img src="img/21.jpg" alt="Image 21" onclick="openModal(this)">
+        <img src="img/22.jpg" alt="Image 22" onclick="openModal(this)">
+        <img src="img/23.jpg" alt="Image 23" onclick="openModal(this)">
+        <img src="img/24.jpg" alt="Image 24" onclick="openModal(this)">
+        <img src="img/25.jpg" alt="Image 25" onclick="openModal(this)">
+        <img src="img/26.jpg" alt="Image 26" onclick="openModal(this)">
+        <img src="img/27.jpg" alt="Image 27" onclick="openModal(this)">
+        <img src="img/28.jpg" alt="Image 28" onclick="openModal(this)">
+        <img src="img/29.jpg" alt="Image 29" onclick="openModal(this)">
+        <img src="img/30.jpg" alt="Image 30" onclick="openModal(this)">
+        <img src="img/31.jpg" alt="Image 31" onclick="openModal(this)">
+        <img src="img/32.jpg" alt="Image 32" onclick="openModal(this)">
+        <img src="img/33.jpg" alt="Image 33" onclick="openModal(this)">
+        <img src="img/34.jpg" alt="Image 34" onclick="openModal(this)">
+        <img src="img/35.jpg" alt="Image 35" onclick="openModal(this)">
+        <img src="img/36.jpg" alt="Image 36" onclick="openModal(this)">
+        <img src="img/37.jpg" alt="Image 37" onclick="openModal(this)">
+        <img src="img/38.jpg" alt="Image 38" onclick="openModal(this)">
+        <img src="img/39.jpg" alt="Image 39" onclick="openModal(this)">
+        <img src="img/40.jpg" alt="Image 40" onclick="openModal(this)">
+        <img src="img/41.jpg" alt="Image 41" onclick="openModal(this)">
+        <img src="img/42.jpg" alt="Image 42" onclick="openModal(this)">
+        <img src="img/43.jpg" alt="Image 43" onclick="openModal(this)">
+        <img src="img/44.jpg" alt="Image 44" onclick="openModal(this)">
+        <img src="img/45.jpg" alt="Image 45" onclick="openModal(this)">
+        <img src="img/46.jpg" alt="Image 46" onclick="openModal(this)">
+        <img src="img/47.jpg" alt="Image 47" onclick="openModal(this)">
+        <img src="img/48.jpg" alt="Image 48" onclick="openModal(this)">
+        <img src="img/49.jpg" alt="Image 49" onclick="openModal(this)">
+        <img src="img/50.jpg" alt="Image 50" onclick="openModal(this)">
+        <img src="img/51.jpg" alt="Image 51" onclick="openModal(this)">
+        <img src="img/52.jpg" alt="Image 52" onclick="openModal(this)">
+        <img src="img/53.jpg" alt="Image 53" onclick="openModal(this)">
+        <img src="img/54.jpg" alt="Image 54" onclick="openModal(this)">
+        <img src="img/55.jpg" alt="Image 55" onclick="openModal(this)">
+        <img src="img/56.jpg" alt="Image 56" onclick="openModal(this)">
+        <img src="img/57.jpg" alt="Image 57" onclick="openModal(this)">
+        <img src="img/58.jpg" alt="Image 58" onclick="openModal(this)">
+        <img src="img/59.jpg" alt="Image 59" onclick="openModal(this)">
+        <img src="img/60.jpg" alt="Image 60" onclick="openModal(this)">
+        <img src="img/61.jpg" alt="Image 61" onclick="openModal(this)">
+        <img src="img/62.jpg" alt="Image 62" onclick="openModal(this)">
+        <img src="img/63.jpg" alt="Image 63" onclick="openModal(this)">
+        <img src="img/64.jpg" alt="Image 64" onclick="openModal(this)">
+        <img src="img/65.jpg" alt="Image 65" onclick="openModal(this)">
+        <img src="img/66.jpg" alt="Image 66" onclick="openModal(this)">
+        <img src="img/67.jpg" alt="Image 67" onclick="openModal(this)">
+        <img src="img/68.jpg" alt="Image 68" onclick="openModal(this)">
+        <img src="img/69.jpg" alt="Image 69" onclick="openModal(this)">
+        <img src="img/70.jpg" alt="Image 70" onclick="openModal(this)">
+        <img src="img/71.jpg" alt="Image 71" onclick="openModal(this)">
+        <img src="img/72.jpg" alt="Image 72" onclick="openModal(this)">
+        <img src="img/73.jpg" alt="Image 73" onclick="openModal(this)">
+        <img src="img/74.jpg" alt="Image 74" onclick="openModal(this)">
+        <img src="img/75.jpg" alt="Image 75" onclick="openModal(this)">
+        <img src="img/76.jpg" alt="Image 76" onclick="openModal(this)">
+        <img src="img/77.jpg" alt="Image 77" onclick="openModal(this)">
+        <img src="img/78.jpg" alt="Image 78" onclick="openModal(this)">
+        <img src="img/79.jpg" alt="Image 79" onclick="openModal(this)">
+        <img src="img/80.jpg" alt="Image 80" onclick="openModal(this)">
+        <img src="img/81.jpg" alt="Image 81" onclick="openModal(this)">
+        <img src="img/82.jpg" alt="Image 82" onclick="openModal(this)">
+        <img src="img/83.jpg" alt="Image 83" onclick="openModal(this)">
+        <img src="img/84.jpg" alt="Image 84" onclick="openModal(this)">
+        <img src="img/85.jpg" alt="Image 85" onclick="openModal(this)">
+        <img src="img/86.jpg" alt="Image 86" onclick="openModal(this)">
+        <img src="img/87.jpg" alt="Image 87" onclick="openModal(this)">
+        <img src="img/88.jpg" alt="Image 88" onclick="openModal(this)">
+        <img src="img/89.jpg" alt="Image 89" onclick="openModal(this)">
+        <img src="img/90.jpg" alt="Image 90" onclick="openModal(this)">
+        <img src="img/91.jpg" alt="Image 91" onclick="openModal(this)">
+        <img src="img/92.jpg" alt="Image 92" onclick="openModal(this)">
+        <img src="img/93.jpg" alt="Image 93" onclick="openModal(this)">
+        <img src="img/94.jpg" alt="Image 94" onclick="openModal(this)">
+        <img src="img/95.jpg" alt="Image 95" onclick="openModal(this)">
+        <img src="img/96.jpg" alt="Image 96" onclick="openModal(this)">
+        <img src="img/97.jpg" alt="Image 97" onclick="openModal(this)">
+        <img src="img/98.jpg" alt="Image 98" onclick="openModal(this)">
+        <img src="img/99.jpg" alt="Image 99" onclick="openModal(this)">
+        <img src="img/100.jpg" alt="Image 100" onclick="openModal(this)">
+        <img src="img/101.jpg" alt="Image 101" onclick="openModal(this)">
+        <img src="img/102.jpg" alt="Image 102" onclick="openModal(this)">
+        <img src="img/103.jpg" alt="Image 103" onclick="openModal(this)">
+        <img src="img/104.jpg" alt="Image 104" onclick="openModal(this)">
+        <img src="img/105.jpg" alt="Image 105" onclick="openModal(this)">
+        <img src="img/106.jpg" alt="Image 106" onclick="openModal(this)">
+        <img src="img/107.jpg" alt="Image 107" onclick="openModal(this)">
+        <img src="img/108.jpg" alt="Image 108" onclick="openModal(this)">
+        <img src="img/109.jpg" alt="Image 109" onclick="openModal(this)">
+        <img src="img/110.jpg" alt="Image 110" onclick="openModal(this)">
+        <img src="img/111.jpg" alt="Image 111" onclick="openModal(this)">
+        <img src="img/112.jpg" alt="Image 112" onclick="openModal(this)">
+        <img src="img/113.jpg" alt="Image 113" onclick="openModal(this)">
+        <img src="img/114.jpg" alt="Image 114" onclick="openModal(this)">
+        <img src="img/115.jpg" alt="Image 115" onclick="openModal(this)">
+        <img src="img/116.jpg" alt="Image 116" onclick="openModal(this)">
+        <img src="img/117.jpg" alt="Image 117" onclick="openModal(this)">
+        <img src="img/118.jpg" alt="Image 118" onclick="openModal(this)">
+        <img src="img/119.jpg" alt="Image 119" onclick="openModal(this)">
+        <img src="img/120.jpg" alt="Image 120" onclick="openModal(this)">
+        <img src="img/121.jpg" alt="Image 121" onclick="openModal(this)">
+        <img src="img/122.jpg" alt="Image 122" onclick="openModal(this)">
+        <img src="img/123.jpg" alt="Image 123" onclick="openModal(this)">
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
